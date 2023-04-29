@@ -6,7 +6,7 @@ import { BsFillCartFill } from 'react-icons/bs';
 import { MdLogout } from 'react-icons/md';
 
 const NavBar = () => {
-  const { userLogged, logoutUser } = useContext(AuthContext);
+  const { userLogged, logoutUser, userFull } = useContext(AuthContext);
   console.log(`valor do contexto`, userLogged);
   return (
     <header className='bg-transparent z-50 w-full '>
@@ -23,7 +23,7 @@ const NavBar = () => {
                   <BsFillCartFill className='w-6 h-6 cursor-pointer' />
               </div>
               <img src='' alt=''/>
-              <p className='text-gray-700'>Nome Usuario</p>
+              <p className='text-gray-700'>Bem Vindo, { userFull.nome }!</p>
                 <MdLogout className='w-6 h-6 cursor-pointer' onClick={logoutUser} />
             </div>
           ) : (
